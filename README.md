@@ -1,124 +1,67 @@
-# Prime Solo Project - Starting Repo
+# MICHAEL, I'M YOU. FROM THE FUTURE. PLEASE LOOK AT THIS README.MD FILE, IT HAS THE SECRET TO THE FIGHT AGAINST THE MACHINES. GODSPEED
 
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+## Frolf AI - Enhancing Your Disc Golf Experience
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+Welcome to the Frolf AI app repository! Our application leverages Artificial Intelligence to transform how players engage with the sport of frisbee golf. Whether you're a beginner or a seasoned pro, Frolf AI offers tools to improve your game and connect with the community.
 
-## Use the Template for This Repository (Don't Clone)
+## Table of Contents
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account. Make the project `PUBLIC`!
+- [MICHAEL, I'M YOU. FROM THE FUTURE. PLEASE LOOK AT THIS README.MD FILE, IT HAS THE SECRET TO THE FIGHT AGAINST THE MACHINES. GODSPEED](#michael-im-you-from-the-future-please-look-at-this-readmemd-file-it-has-the-secret-to-the-fight-against-the-machines-godspeed)
+  - [Frolf AI - Enhancing Your Disc Golf Experience](#frolf-ai---enhancing-your-disc-golf-experience)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Key Features](#key-features)
+  - [Getting Started](#getting-started)
+  - [Technology Stack](#technology-stack)
+  - [Development Setup](#development-setup)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-## Prerequisites
+## Introduction
 
-Before you get started, make sure you have the following software installed on your computer:
+Frolf AI aims to enrich the disc golf player's experience through advanced AI features. Our app not only tracks scores and helps find courses but also analyzes your playing patterns to offer personalized advice.
 
-- [Node.js](https://nodejs.org/en)
-- [PostgreSQL](https://www.postgresql.org)
-- [Nodemon](https://nodemon.io)
+## Key Features
 
-## Create Database and Table
+- **Smart Score Tracking**: Automate scorekeeping with precision and ease, allowing you to focus on the game.
+- **Intelligent Course Finder**: Discover courses based on your location, preferred challenge level, and historical data.
+- **Performance Analytics**: Receive tailored feedback on your throws, with suggestions for technique adjustments and strategies.
+- **AI Caddy**: Get real-time recommendations on which disc to use and how to approach each shot, considering current weather conditions and course topology.
+- **Community Engagement**: Join challenges, track your progress, and connect with fellow enthusiasts.
 
-Create a new database called `prime_app` and create a `user` table:
+## Getting Started
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
+To get started with Frolf AI:
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`.
+1. Clone the repository:
+git clone <https://github.com/Reyals500/Frolf-Project.git>
 
-## Development Setup Instructions
+2. Navigate to the project directory:
+cd Frolf-Project
 
-- Run `npm install`.
-    - Be sure to take stock of `package.json` to see which dependencies you'll need to add.
-- Create a `.env` file at the root of the project and paste this line into the file:
+3. Install dependencies:
+npm install
 
-```plaintext
-SERVER_SESSION_SECRET=superDuperSecret
-```
+4. Start the application:
+npm start
 
-While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [Password Generator Plus](https://passwordsgenerator.net). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
+## Technology Stack
 
-- Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
-- Run `npm run server` to start the server.
-- Run `npm run client` to start the client.
-- Navigate to `localhost:5173`.
+- **Frontend**: React Native for a seamless, cross-platform user experience.
+- **Backend**: Python with Flask for handling AI computations and API services.
+- **Database**: MongoDB for scalable data storage.
+- **AI**: TensorFlow for building and training machine learning models.
 
-## Debugging
+## Development Setup
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
+This section describes how to set up your development environment to work on Frolf AI. It includes instructions for code style, testing frameworks, and commit guidelines.
 
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
+## Contributing
 
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
+We welcome contributions from the community! Please see our `CONTRIBUTING.md` for guidelines on how to make a pull request, code of conduct, and our development practices.
 
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
+## License
 
-## Testing Routes with Postman
+Frolf AI is open source and available under the XYZ License. For more details, see the `LICENSE` file.
 
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
-
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
-
-1. Run `npm run server` to start the server.
-2. Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password.
-   2. `POST /api/user/login` will login a user, see body to change username/password.
-   3. `GET /api/user` will get user information, by default it's not very much.
-
-After running the login route above, you can try any other route you've created that requires a logged in user!
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
-- Run `npm start`.
-- Navigate to `localhost:5173`.
-
-## Lay of the Land
-
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
-
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
-
-Directory Structure:
-
-- `src/` contains the React application.
-- `public/` contains static assets for the client-side.
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site.
-- `server/` contains the Express App.
-
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
-
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
-
-## Deployment
-
-1. Create a new Heroku project.
-1. Link the Heroku project to the project GitHub Repo.
-1. Create an Heroku Postgres database.
-1. Connect to the Heroku Postgres database from Postico.
-1. Create the necessary tables.
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security.
-1. In the deploy section, select manual deploy.
-
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2.
+For more details on each component's progress and specific functionalities, please refer to the latest commits and pull requests.
