@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function CoursePage() {
+function CourseList() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -33,4 +33,4 @@ function CoursePage() {
   );
 }
 
-export default CoursePage;
+export default CourseList;
